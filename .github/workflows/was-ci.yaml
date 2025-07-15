@@ -30,6 +30,9 @@ jobs:
       - name: Set image tag
         run: echo "TAG=${{ github.sha }}" >> $GITHUB_ENV
 
+      - name: Give execute permission to mvnw
+        run: chmod +x ./mvnw
+
       # Maven으로 JAR 빌드
       - name: Build JAR with Maven
         working-directory: was
